@@ -19,10 +19,6 @@ import java.util.ArrayList;
 
 public class CoinController extends PagedListEpoxyController<Coin> {
 
-//    @AutoModel
-//    HeaderModel_ headerModel;
-//    @AutoModel
-//    LoaderModel_ loaderModel;
 
     private HeaderModel.HeaderListener listener;
     private Context context;
@@ -44,20 +40,4 @@ public class CoinController extends PagedListEpoxyController<Coin> {
                     .id("loader");
         }
     }
-
-//    @Override
-//    protected void buildModels(ArrayList<Coin> coins, Boolean loadingMore) {
-//
-//        headerModel
-//                .listener(listener)
-//                .addTo(this);
-//
-//        for (Coin coin : coins){
-//            new CoinListModel_()
-//                    .id(coin.getUuid())
-//                    .coin(coin)
-//                    .context(context)
-//                    .addTo(this);
-//        }
-//    }
 }

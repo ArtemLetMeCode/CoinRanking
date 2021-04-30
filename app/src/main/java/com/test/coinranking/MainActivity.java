@@ -17,8 +17,7 @@ public class MainActivity extends DaggerAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.navHostFragment);
-//        navController = navHostFragment.getNavController();
+        getSupportActionBar().hide();
 
         navController = Navigation.findNavController(this, R.id.navHostFragment);
 
