@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Coin Ranking</string>
+    <string name="internet_connection">Network is not available</string>
+    <string name="crypto_currency">Cryptocurrency</string>
+    <string name="price">Price</string>
+    <string name="twenty_four_h">24h</string>
+    <string name="currency_value_format">$ %s</string>
+    <string name="percent_value_format">%s%%</string>
+    <string name="no_data">no data</string>
+    <string name="error">Error!</string>
+</resources>

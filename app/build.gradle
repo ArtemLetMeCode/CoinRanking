@@ -1,0 +1,106 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.test.coinranking"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+
+        }
+    }
+
+    flavorDimensions "main"
+
+    productFlavors {
+        production {
+            buildConfigField 'String', 'BASE_URL', '"https://api.coinranking.com/"'
+            buildConfigField 'String', 'TOKEN', '"coinranking5ead876f8c00d7213bb24aa2e0bf15189a5ebf44f97dcfca"'
+        }
+        develop {
+            buildConfigField 'String', 'BASE_URL', '"https://api.coinranking.com/"'
+            buildConfigField 'String', 'TOKEN', '"coinranking5ead876f8c00d7213bb24aa2e0bf15189a5ebf44f97dcfca"'
+        }
+        staging {
+            buildConfigField 'String', 'BASE_URL', '"https://api.coinranking.com/"'
+            buildConfigField 'String', 'TOKEN', '"coinranking5ead876f8c00d7213bb24aa2e0bf15189a5ebf44f97dcfca"'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // Network
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:$rootProject.okhttpVersion"
+
+    // Glide 4
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+    implementation 'com.caverock:androidsvg-aar:1.4'
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+
+    // Navigation component
+    implementation "androidx.navigation:navigation-fragment:$rootProject.navVersion"
+    implementation "androidx.navigation:navigation-ui:$rootProject.navVersion"
+
+    // Epoxy
+    implementation "com.airbnb.android:epoxy:$rootProject.epoxyVersion"
+    annotationProcessor "com.airbnb.android:epoxy-processor:$rootProject.epoxyVersion"
+    implementation "com.airbnb.android:epoxy-paging:$rootProject.epoxyVersion"
+
+    // Paging
+    implementation "androidx.paging:paging-runtime:$rootProject.pagingVersion"
+    implementation "androidx.paging:paging-rxjava2:$rootProject.pagingVersion"
+
+    debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+
+
+}
