@@ -65,14 +65,14 @@ public class CurrencyListViewModel extends BaseViewModel {
     }
 
     public void setOrderBy(GetCoinsParams.OrderBy value) {
-        lvOrderBy.postValue(value);
-        lvOrderDirection.postValue(GetCoinsParams.OrderDirection.DESC);
+        lvOrderBy.setValue(value);
+        lvOrderDirection.setValue(GetCoinsParams.OrderDirection.DESC);
         coinDataSourceFactory.setOrderBy(value);
         reload();
     }
 
     public void setOppositeOrderDirection() {
-        lvOrderDirection.postValue(GetCoinsParams.OrderDirection.getOpposite(lvOrderDirection.getValue()));
+        lvOrderDirection.setValue(GetCoinsParams.OrderDirection.getOpposite(lvOrderDirection.getValue()));
         coinDataSourceFactory.setOrderDirection(lvOrderDirection.getValue());
         reload();
     }
